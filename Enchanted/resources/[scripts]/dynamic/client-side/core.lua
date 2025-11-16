@@ -150,7 +150,7 @@ RegisterCommand("PlayerFunctions",function()
 					exports.dynamic:AddMenu("Computador","Abrir o software dos grupos.","painel")
 				end
 
-				local Event = (Permission == "LSPD" or Permission == "BCSO") and "mdt:Open" or "painel:Open"
+				local Event = (Permission == "Militar" or Permission == "Rota" or Permission == "Civil" or Permission == "Federal" or Permission == "PRF") and "mdt:Open" or "painel:Open"
 
 				exports.dynamic:AddButton(v.Name or Permission,"Painel de Controle do usuário.",Event,Permission,"painel",true)
 
@@ -189,10 +189,10 @@ RegisterCommand("EmergencyFunctions",function()
 			exports.dynamic:AddButton("Placa","Verificar emplacamento.","prison:Plate",false,false,true)
 
 			exports.dynamic:AddMenu("Emergência","Avisos emergenciais.","tencode")
-			exports.dynamic:AddButton("10-13","Oficial desmaiado/ferido.","dynamic:Tencode","13","tencode",true)
-			exports.dynamic:AddButton("10-20","Localização.","dynamic:Tencode","20","tencode",true)
-			exports.dynamic:AddButton("10-38","Abordagem de trânsito.","dynamic:Tencode","38","tencode",true)
-			exports.dynamic:AddButton("10-78","Apoio com prioridade.","dynamic:Tencode","78","tencode",true)
+			exports.dynamic:AddButton("QRT","Oficial desmaiado/ferido.","dynamic:Tencode","QRT","tencode",true)
+			exports.dynamic:AddButton("QTH","Localização.","dynamic:Tencode","QTH","tencode",true)
+			exports.dynamic:AddButton("QTI","Abordagem de trânsito.","dynamic:Tencode","QTI","tencode",true)
+			exports.dynamic:AddButton("QRR","Apoio com prioridade.","dynamic:Tencode","QRR","tencode",true)
 
 			if Health > 100 and not IsPedInAnyVehicle(Ped) then
 				exports.dynamic:AddMenu("Jogador","Pessoa mais próxima de você.","player")

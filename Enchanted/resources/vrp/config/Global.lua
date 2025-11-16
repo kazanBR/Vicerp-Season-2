@@ -92,39 +92,65 @@ Groups = {
 		Service = true,
 		Block = true
 	},
-	LSPD = {
+	Militar = {
 		Permission = {
-			LSPD = true
+			Militar = true
 		},
 		Hierarchy = { "Coronel","Tenente-Coronel","Major","Capitão","1º Tenente","2º Tenente","Aspirante","Subtenente","1º Sargento","2º Sargento","3º Sargento","Cabo","Soldado","Recruta","Delegada" },
 		Salary = { 10000,9750,9500,9250,9000,8750,8500,8250,8000,7750,7500,7250,7000,6750,6500 },
-		Name = "Los Santos Police Department",
+		Name = "Polícia Militar do Estado de São Paulo",
 		SecurityCam = true,
 		Service = true,
 		Type = "Work",
 		Markers = true,
 		Chat = true
 	},
-	BCSO = {
+	Rota = {
 		Permission = {
-			BCSO = true
+			Rota = true
 		},
 		Hierarchy = { "Coronel","Tenente-Coronel","Major","Capitão","1º Tenente","2º Tenente","Aspirante","Subtenente","1º Sargento","2º Sargento","3º Sargento","Cabo","Soldado","Recruta","Delegada" },
 		Salary = { 10000,9750,9500,9250,9000,8750,8500,8250,8000,7750,7500,7250,7000,6750,6500 },
-		Name = "Blaine County Sheriff Officer",
+		Name = "1º Batalhão de Polícia de Choque - ROTA",
 		SecurityCam = true,
 		Service = true,
 		Type = "Work",
 		Markers = true,
 		Chat = true
 	},
-	SAPR = {
+	Civil = {
 		Permission = {
-			SAPR = true
+			Civil = true
 		},
 		Hierarchy = { "Coronel","Tenente-Coronel","Major","Capitão","1º Tenente","2º Tenente","Aspirante","Subtenente","1º Sargento","2º Sargento","3º Sargento","Cabo","Soldado","Recruta","Delegada" },
 		Salary = { 10000,9750,9500,9250,9000,8750,8500,8250,8000,7750,7500,7250,7000,6750,6500 },
-		Name = "San Andreas Park Ranger",
+		Name = "Polícia Civil do Estado de São Paulo",
+		SecurityCam = true,
+		Service = true,
+		Type = "Work",
+		Markers = true,
+		Chat = true
+	},
+	Federal = {
+		Permission = {
+			Federal = true
+		},
+		Hierarchy = { "Coronel","Tenente-Coronel","Major","Capitão","1º Tenente","2º Tenente","Aspirante","Subtenente","1º Sargento","2º Sargento","3º Sargento","Cabo","Soldado","Recruta","Delegada" },
+		Salary = { 10000,9750,9500,9250,9000,8750,8500,8250,8000,7750,7500,7250,7000,6750,6500 },
+		Name = "Departamento de Polícia Federal",
+		SecurityCam = true,
+		Service = true,
+		Type = "Work",
+		Markers = true,
+		Chat = true
+	},
+	PRF = {
+		Permission = {
+			PRF = true
+		},
+		Hierarchy = { "Coronel","Tenente-Coronel","Major","Capitão","1º Tenente","2º Tenente","Aspirante","Subtenente","1º Sargento","2º Sargento","3º Sargento","Cabo","Soldado","Recruta","Delegada" },
+		Salary = { 10000,9750,9500,9250,9000,8750,8500,8250,8000,7750,7500,7250,7000,6750,6500 },
+		Name = "Polícia Rodoviária Federal",
 		SecurityCam = true,
 		Service = true,
 		Type = "Work",
@@ -238,18 +264,22 @@ Groups = {
 	},
 	Policia = {
 		Permission = {
-			LSPD = true,
-			BCSO = true,
-			SAPR = true
+			Militar = true,
+			Rota = true,
+			Civil = true,
+			Federal = true,
+			PRF = true
 		},
 		Hierarchy = { "Membro" },
 		Block = true
 	},
 	Emergencia = {
 		Permission = {
-			LSPD = true,
-			BCSO = true,
-			SAPR = true,
+			Militar = true,
+			Rota = true,
+			Civil = true,
+			Federal = true,
+			PRF = true,
 			Paramedico = true
 		},
 		Hierarchy = { "Membro" },
@@ -652,16 +682,24 @@ Theme = {
 		progress = true -- [ Opções disponíveis: true, false ],
 	},
 	chat = {
-		LSPD = {
+		Militar = {
 			background = "#16468b",
 			letter = "#ffffff"
 		},
-		BCSO = {
+		Civil = {
 			background = "#463939",
 			letter = "#ffffff"
 		},
-		BCPR = {
-			background = "#2d402d",
+		Federal = {
+			background = "#e4cf12ff",
+			letter = "#ffffff"
+		},
+		Rota = {
+			background = "#1229aaff",
+			letter = "#ffffff"
+		},
+		PRF = {
+			background = "#4bd6d6ff",
 			letter = "#ffffff"
 		},
 		Paramedico = {

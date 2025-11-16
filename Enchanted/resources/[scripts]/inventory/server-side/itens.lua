@@ -3141,7 +3141,7 @@ Use = {
 					Player(ClosestPed).state.Handcuff = true
 					Player(ClosestPed).state.Commands = true
 					TriggerClientEvent("inventory:Close",ClosestPed)
-					TriggerClientEvent("radio:Disconnect",ClosestPed)
+					TriggerClientEvent("radio:RadioClean",ClosestPed)
 				end
 
 				Player(source).state.Cancel = false

@@ -82,7 +82,7 @@ Config = {
 	},
 
 	OtherPermissions = {
-		LSPD = {
+		Militar = {
 			Board = 1,
 			Firearms = 1,
 			Flyingarms = 1,

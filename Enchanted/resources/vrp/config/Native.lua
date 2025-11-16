@@ -140,5 +140,5 @@ end
 -- CHECKPOLICE
 -----------------------------------------------------------------------------------------------------------------------------------------
 function CheckPolice()
-	return LocalPlayer.state.LSPD or LocalPlayer.state.BCSO or LocalPlayer.state.SAPR
+	return LocalPlayer.state.Militar or LocalPlayer.state.Rota or LocalPlayer.state.Civil or LocalPlayer.state.Federal or LocalPlayer.state.PRF
 end

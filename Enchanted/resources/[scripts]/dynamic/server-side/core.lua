@@ -20,19 +20,19 @@ local CountClothes = {}
 -- CODES
 -----------------------------------------------------------------------------------------------------------------------------------------
 local Codes = {
-	["13"] = {
+	["QRT"] = {
 		["Message"] = "Oficial desmaiado/ferido",
 		["Blip"] = 6
 	},
-	["20"] = {
+	["QTH"] = {
 		["Message"] = "Localização",
 		["Blip"] = 6
 	},
-	["38"] = {
+	["QTI"] = {
 		["Message"] = "Abordagem de trânsito",
 		["Blip"] = 6
 	},
-	["78"] = {
+	["QRR"] = {
 		["Message"] = "Apoio com prioridade",
 		["Blip"] = 6
 	}

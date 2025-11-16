@@ -12,7 +12,7 @@ HackerItem = "bandage"
 Locations = {
 	{
 		Distance = 2.5,
-		Permission = "LSPD",
+		Permission = "Militar",
 		Coords = vec3(-801.72,-1091.84,11.09)
 	},{
 		Distance = 2.5,

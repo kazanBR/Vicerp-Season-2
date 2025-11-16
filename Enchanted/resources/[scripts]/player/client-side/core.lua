@@ -469,7 +469,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ADDSTATEBAGCHANGEHANDLER
 -----------------------------------------------------------------------------------------------------------------------------------------
-for _,v in pairs({ "LSPD","SAPR","BCSO" }) do
+for _,v in pairs({ "Militar","Rota","Civil","Federal","PRF" }) do
 	AddStateBagChangeHandler(v,("player:%s"):format(LocalPlayer.state.Source),function(Name,Key,Value)
 		if Value then
 			local Ped = PlayerPedId()

@@ -17,83 +17,117 @@ local Active = false
 -- INFORMATION
 -----------------------------------------------------------------------------------------------------------------------------------------
 local Information = {
-	LSPD = {
-		["Coronel"] = 3,
-		["Tenente-Coronel"] = 18,
-		["Major"] = 6,
-		["Capitão"] = 32,
-		["1º Tenente"] = 42,
-		["2º Tenente"] = 42,
-		["Aspirante"] = 53,
-		["Subtenente"] = 53,
-		["1º Sargento"] = 53,
-		["2º Sargento"] = 53,
-		["3º Sargento"] = 53,
-		["Cabo"] = 53,
-		["Soldado"] = 53,
-		["Recruta"] = 53,
-		["Delegada"] = 32
-	},
-	BCSO = {
-		["Coronel"] = 3,
-		["Tenente-Coronel"] = 18,
-		["Major"] = 6,
-		["Capitão"] = 32,
-		["1º Tenente"] = 42,
-		["2º Tenente"] = 42,
-		["Aspirante"] = 53,
-		["Subtenente"] = 53,
-		["1º Sargento"] = 53,
-		["2º Sargento"] = 53,
-		["3º Sargento"] = 53,
-		["Cabo"] = 53,
-		["Soldado"] = 53,
-		["Recruta"] = 53,
-		["Delegada"] = 32
-	},
-	BCPR = {
-		["Coronel"] = 3,
-		["Tenente-Coronel"] = 18,
-		["Major"] = 6,
-		["Capitão"] = 32,
-		["1º Tenente"] = 42,
-		["2º Tenente"] = 42,
-		["Aspirante"] = 53,
-		["Subtenente"] = 53,
-		["1º Sargento"] = 53,
-		["2º Sargento"] = 53,
-		["3º Sargento"] = 53,
-		["Cabo"] = 53,
-		["Soldado"] = 53,
-		["Recruta"] = 53,
-		["Delegada"] = 32
-	},
-	Paramedico = {
-		["Diretor-Geral"] = 1,
-		["Diretor Clínico"] = 6,
-		["Diretor Técnico"] = 59,
-		["Chefe de Corpo Clínico"] = 76,
-		["Médico Supervisor"] = 76,
-		["Médico Cirurgião"] = 76,
-		["Médico Plantonista"] = 76,
-		["Médico Especialista"] = 76,
-		["Médico Clínico"] = 76,
-		["Residente"] = 76,
-		["Enfermeiro"] = 76,
-		["Técnico de Enfermagem"] = 76,
-		["Auxiliar de Enfermagem"] = 76,
-		["Estagiário de Medicina"] = 76,
-		["Estagiário de Enfermagem"] = 76
-	},
-	Corredor = {
-		["Corredor"] = 8
-	},
-	Traficante = {
-		["Traficante"] = 5
-	},
-	Boosting = {
-		["Boosting"] = 47
-	}
+    Militar = {
+        ["Coronel"] = 1,
+        ["Tenente-Coronel"] = 2,
+        ["Major"] = 3,
+        ["Capitão"] = 4,
+        ["1º Tenente"] = 5,
+        ["2º Tenente"] = 6,
+        ["Aspirante"] = 7,
+        ["Subtenente"] = 8,
+        ["1º Sargento"] = 9,
+        ["2º Sargento"] = 10,
+        ["3º Sargento"] = 11,
+        ["Cabo"] = 12,
+        ["Soldado"] = 13,
+        ["Recruta"] = 14,
+        ["Delegada"] = 15
+    },
+    Rota = {
+        ["Coronel"] = 16,
+        ["Tenente-Coronel"] = 17,
+        ["Major"] = 18,
+        ["Capitão"] = 19,
+        ["1º Tenente"] = 20,
+        ["2º Tenente"] = 21,
+        ["Aspirante"] = 22,
+        ["Subtenente"] = 23,
+        ["1º Sargento"] = 24,
+        ["2º Sargento"] = 25,
+        ["3º Sargento"] = 26,
+        ["Cabo"] = 27,
+        ["Soldado"] = 28,
+        ["Recruta"] = 29,
+        ["Delegada"] = 30
+    },
+    Civil = {
+        ["Coronel"] = 31,
+        ["Tenente-Coronel"] = 32,
+        ["Major"] = 33,
+        ["Capitão"] = 34,
+        ["1º Tenente"] = 35,
+        ["2º Tenente"] = 36,
+        ["Aspirante"] = 37,
+        ["Subtenente"] = 38,
+        ["1º Sargento"] = 39,
+        ["2º Sargento"] = 40,
+        ["3º Sargento"] = 41,
+        ["Cabo"] = 42,
+        ["Soldado"] = 43,
+        ["Recruta"] = 44,
+        ["Delegada"] = 45
+    },
+    Federal = {
+        ["Coronel"] = 46,
+        ["Tenente-Coronel"] = 47,
+        ["Major"] = 48,
+        ["Capitão"] = 49,
+        ["1º Tenente"] = 50,
+        ["2º Tenente"] = 51,
+        ["Aspirante"] = 52,
+        ["Subtenente"] = 53,
+        ["1º Sargento"] = 54,
+        ["2º Sargento"] = 55,
+        ["3º Sargento"] = 56,
+        ["Cabo"] = 57,
+        ["Soldado"] = 58,
+        ["Recruta"] = 59,
+        ["Delegada"] = 60
+    },
+    PRF = {
+        ["Coronel"] = 61,
+        ["Tenente-Coronel"] = 62,
+        ["Major"] = 63,
+        ["Capitão"] = 64,
+        ["1º Tenente"] = 65,
+        ["2º Tenente"] = 66,
+        ["Aspirante"] = 67,
+        ["Subtenente"] = 68,
+        ["1º Sargento"] = 69,
+        ["2º Sargento"] = 70,
+        ["3º Sargento"] = 71,
+        ["Cabo"] = 72,
+        ["Soldado"] = 73,
+        ["Recruta"] = 74,
+        ["Delegada"] = 75
+    },
+    Paramedico = {
+        ["Diretor-Geral"] = 76,
+        ["Diretor Clínico"] = 77,
+        ["Diretor Técnico"] = 78,
+        ["Chefe de Corpo Clínico"] = 79,
+        ["Médico Supervisor"] = 80,
+        ["Médico Cirurgião"] = 81,
+        ["Médico Plantonista"] = 82,
+        ["Médico Especialista"] = 83,
+        ["Médico Clínico"] = 84,
+        ["Residente"] = 85,
+        ["Enfermeiro"] = 86,
+        ["Técnico de Enfermagem"] = 87,
+        ["Auxiliar de Enfermagem"] = 88,
+        ["Estagiário de Medicina"] = 89,
+        ["Estagiário de Enfermagem"] = 90
+    },
+    Corredor = {
+        ["Corredor"] = 91
+    },
+    Traficante = {
+        ["Traficante"] = 92
+    },
+    Boosting = {
+        ["Boosting"] = 93
+    }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADMARKERS
