@@ -550,6 +550,7 @@ Groups = {
 -- CHARACTERITENS
 -----------------------------------------------------------------------------------------------------------------------------------------
 CharacterItens = {
+	cellphone = 1,
 	soda = 2,
 	identity = 1,
 	hamburger = 2
@@ -682,13 +683,13 @@ Theme = {
 	},
 	hud = {
 		modes = {
-			info = 3, -- [ Opções disponíveis: 1,2,3 ],
-			icon = "fill", -- [ Opções disponíveis: fill,line ],
+			info = 2, -- [ Opções disponíveis: 1,2,3 ],
+			icon = "line", -- [ Opções disponíveis: fill,line ],
 			status = 10, -- [ Opções disponíveis: 1 a 12 ],
-			vehicle = 3 -- [ Opções disponíveis: 1,2,3 ]
+			vehicle = 1 -- [ Opções disponíveis: 1,2,3 ]
 		},
 		logo = 75, -- tamanho da logo
-		percentage = true,
+		percentage = false,
 		icons = "#FFFFFF",
 		nitro = "#f69d2a",
 		rpm = "#FFFFFF",

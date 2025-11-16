@@ -74,7 +74,7 @@ local function RunNoClipThread()
 				SetVehicleEngineOn(NoClipEntity,false,true,true)
 			end
 
-			SetEntityLocallyVisible(NoClipEntity)
+			--SetEntityLocallyVisible(NoClipEntity)
 		end
 	end)
 end
@@ -89,7 +89,7 @@ AddEventHandler("creative:NoClip",function()
 	NoClipEntity = PlayerVehicle ~= 0 and PlayerVehicle or PlayerPed
 
 	if NoClip then
-		SetEntityLocallyVisible(NoClipEntity)
+		--SetEntityLocallyVisible(NoClipEntity)
 		SetEntityAlpha(NoClipEntity,100,false)
 		SetEntityCompletelyDisableCollision(NoClipEntity,false,false)
 		SetEntityCollision(NoClipEntity,false,false)

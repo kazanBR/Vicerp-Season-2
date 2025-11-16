@@ -75,41 +75,54 @@ end)
 -- CHECKIN
 -----------------------------------------------------------------------------------------------------------------------------------------
 function Creative.CheckIn()
-	local Return = false
-	local source = source
-	local Alimentation = false
-	local Valuation,Repose = 1000,1200
-	local Passport = vRP.Passport(source)
-	if Passport then
-		local MedicPlan = vRP.DatatableInformation(Passport,"MedicPlan")
-		if MedicPlan and MedicPlan > os.time() then
-			Valuation,Repose = 500,600
-		end
+    local Return = false
+    local source = source
+    local Alimentation = false
+    local Valuation, Repose = 1000, 1200
+    local Passport = vRP.Passport(source)
+    local Service, CountService = vRP.NumPermission("Paramedico")
 
-		if vRP.Request(source,"Centro Médico","Deseja adicionar o serviço de alimentação pagando <b>$500</b>?") then
-			Valuation = Valuation + 500
-			Alimentation = true
-		end
+    if CountService >= 1 then
+        TriggerClientEvent("Notify", source, "vermelho", "Há médicos em serviço..", "Aviso", 5000)
+        return false
+    end
 
-		if vRP.GetHealth(source) <= 100 then
-			Valuation = Valuation + 500
-			Repose = Repose + 600
-		end
+    if Passport then
+        local MedicPlan = vRP.DatatableInformation(Passport, "MedicPlan")
+        if MedicPlan and MedicPlan > os.time() then
+            Valuation, Repose = 500, 600
+        end
+		
+        local resposta = vRP.Request(source, "Centro Médico", "Deseja adicionar o serviço de alimentação pagando <b>$500</b>?")
 
-		if vRP.PaymentFull(Passport,Valuation) then
-			if Alimentation then
-				vRP.UpgradeThirst(Passport,25)
-				vRP.UpgradeHunger(Passport,25)
-			end
+        if not resposta then
+            return false
+        end
 
-			TriggerEvent("Repose",source,Passport,Repose)
-			Return = true
-		else
-			TriggerClientEvent("Notify",source,"Aviso","Dinheiro insuficiente.","amarelo",5000)
-		end
-	end
+        if resposta then
+            Valuation = Valuation + 500
+            Alimentation = true
+        end
 
-	return Return
+        if vRP.GetHealth(source) <= 100 then
+            Valuation = Valuation + 500
+            Repose = Repose + 600
+        end
+
+        if vRP.PaymentFull(Passport, Valuation) then
+            if Alimentation then
+                vRP.UpgradeThirst(Passport, 25)
+                vRP.UpgradeHunger(Passport, 25)
+            end
+
+            TriggerEvent("Repose", source, Passport, Repose)
+            Return = true
+        else
+            TriggerClientEvent("Notify", source, "Aviso", "Dinheiro insuficiente.", "amarelo", 5000)
+        end
+    end
+
+    return Return
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TARGET:REPOSE

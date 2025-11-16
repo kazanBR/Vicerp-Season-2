@@ -266,38 +266,38 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- INVENTORY:CREATEWEAPON
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterNetEvent("inventory:CreateWeapon")
-AddEventHandler("inventory:CreateWeapon",function(Name)
-	local WeaponName = SplitOne(Name)
-	if not Config[WeaponName] or Objects[WeaponName] then
-		return false
-	end
+--RegisterNetEvent("inventory:CreateWeapon")
+--AddEventHandler("inventory:CreateWeapon",function(Name)
+	--local WeaponName = SplitOne(Name)
+	--if not Config[WeaponName] or Objects[WeaponName] then
+		--return false
+	--end
 
-	local WeaponModel = nil
-	local Ped = PlayerPedId()
-	local Data = Config[WeaponName]
-	local Coords = GetEntityCoords(Ped)
-	local Bone = GetPedBoneIndex(Ped,Data.Bone)
+	--local WeaponModel = nil
+	--local Ped = PlayerPedId()
+	--local Data = Config[WeaponName]
+	--local Coords = GetEntityCoords(Ped)
+	--local Bone = GetPedBoneIndex(Ped,Data.Bone)
 
-	if Skins[WeaponName] then
-		local Hash = GetHashKey(Skins[WeaponName])
-		WeaponModel = GetWeaponComponentTypeModel(Hash)
-	end
+	--if Skins[WeaponName] then
+		--local Hash = GetHashKey(Skins[WeaponName])
+		--WeaponModel = GetWeaponComponentTypeModel(Hash)
+	--end
 
-	local Networked = vRPS.CreateObject(Data.Model,Coords.x,Coords.y,Coords.z,WeaponName,WeaponModel)
-	if not Networked then
-		return false
-	end
+	--local Networked = vRPS.CreateObject(Data.Model,Coords.x,Coords.y,Coords.z,WeaponName,WeaponModel)
+	---if not Networked then
+		--return false
+	--end
 
-	Objects[WeaponName] = LoadNetwork(Networked)
-	while not DoesEntityExist(Objects[WeaponName]) do
-		Wait(100)
-	end
+	--Objects[WeaponName] = LoadNetwork(Networked)
+	---while not DoesEntityExist(Objects[WeaponName]) do
+		--Wait(100)
+	--end
 
-	SetEntityCollision(Objects[WeaponName],false,false)
-	SetEntityCompletelyDisableCollision(Objects[WeaponName],false,true)
-	AttachEntityToEntity(Objects[WeaponName],Ped,Bone,Data.x,Data.y,Data.z,Data.RotX,Data.RotY,Data.RotZ,true,true,false,false,2,true)
-end)
+	--SetEntityCollision(Objects[WeaponName],false,false)
+	--SetEntityCompletelyDisableCollision(Objects[WeaponName],false,true)
+	--AttachEntityToEntity(Objects[WeaponName],Ped,Bone,Data.x,Data.y,Data.z,Data.RotX,Data.RotY,Data.RotZ,true,true,false,false,2,true)
+--end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSTOREWEAPON
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -390,7 +390,7 @@ AddEventHandler("inventory:CleanWeapons",function(Ignore)
 	if not Ignore then
 		local Ammo = GetAmmoInPedWeapon(Ped,Weapon)
 		if vSERVER.PreventWeapons(Weapon,Ammo) then
-			TriggerEvent("inventory:CreateWeapon",Weapon)
+			--TriggerEvent("inventory:CreateWeapon",Weapon)
 		end
 	end
 

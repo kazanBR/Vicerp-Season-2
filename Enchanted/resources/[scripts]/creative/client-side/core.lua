@@ -363,11 +363,11 @@ CreateThread(function()
 		DistantCopCarSirens(false)
 		SetPauseMenuActive(false)
 
-		SetVehicleDensityMultiplierThisFrame(1.0)
-		SetRandomVehicleDensityMultiplierThisFrame(1.0)
-		SetParkedVehicleDensityMultiplierThisFrame(1.0)
-		SetScenarioPedDensityMultiplierThisFrame(1.0,1.0)
-		SetPedDensityMultiplierThisFrame(1.0)
+		SetVehicleDensityMultiplierThisFrame(0.3)
+        SetRandomVehicleDensityMultiplierThisFrame(0.3)
+        SetParkedVehicleDensityMultiplierThisFrame(0.3)
+        SetScenarioPedDensityMultiplierThisFrame(0.3,0.3)
+        SetPedDensityMultiplierThisFrame(0.6)
 
 		if IsPedArmed(Ped,6) then
 			DisableControlAction(0,140,true)
